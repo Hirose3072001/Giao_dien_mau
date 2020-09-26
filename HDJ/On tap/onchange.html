@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="javascript">
+function kt()
+{
+	if(form1.textfield.value==""||isNaN(form1.textfield.value)==true)
+	{
+		alert("Hay nhap so");
+		form1.textfield.focus();
+		form1.textfield.select();
+		return false;
+	}
+	alert("Thanh cong");
+	return true;
+}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <label>
+  So
+  <input type="text" name="textfield" onchange="kt()"/>
+  </label>
+</form>
+</body>
+</html>

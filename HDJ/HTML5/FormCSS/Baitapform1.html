@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+h1.mau{
+	color:#F00;
+}
+h1:hover{
+	color:#00F;
+}
+fieldset{
+	width:50%;
+}
+legend:hover{
+	font-weight:bold;
+	color:#F00;
+}
+td.right{
+	text-align:right;
+}
+input.maunen:focus{
+	background-color:yellow;
+}
+</style>
+</head>
+
+<body>
+<form action="http://www.aptech.vn">
+<h1 class="mau">DANG KY</h1>
+<fieldset>
+<legend>Thong tin ca nhan</legend>
+<table>
+<tr>
+<td class="right">Ho ten</td>
+<td><input type="text" class="maunen" required="required"/></td>
+</tr>
+<tr>
+<td class="right">Ngay sinh</td>
+<td><input type="text" class="maunen" required="required"/></td>
+</tr>
+<tr>
+<td class="right">Gioi tinh</td>
+<td><input type="radio" name="gt" checked="checked" />Nam<input type="radio" name="gt" />Nu</td>
+</tr>
+</table>
+</fieldset>
+<fieldset>
+<legend>Noi dung dang ky</legend>
+<table>
+<tr>
+<td>Khoa hoc</td>
+<td><select>
+<option>ACCP</option>
+<option>ACNA</option>
+<option>ITT</option>
+</select></td>
+</tr>
+<tr>
+<td>Gio hoc</td>
+<td><input type="radio" name="gh" />G<input type="radio" name="gh" />H<input type="radio" name="gh" />I<input type="radio" name="gh" />K<input type="radio" name="gh" />L<input type="radio" name="gh" />M</td>
+</tr>
+</table>
+</fieldset>
+<input type="submit" value="Gui"/><input type="reset" value="Xoa" />
+</form>
+</body>
+</html>

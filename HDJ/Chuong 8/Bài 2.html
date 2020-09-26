@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bài 2</title>
+<script language="javascript">
+function tinh()
+{
+	with(document.form1)
+	{
+		if(bk.value=="")
+		{
+			alert("Hãy nhập bán kính vào!");
+			bk.focus();
+			return false;
+		}
+		if(isNaN(bk.value)==true)
+		{
+			alert("Nhập vào bán kính là số");
+			bk.focus();
+			bk.select();
+			return false;
+		}
+		bankinh=eval(bk.value);
+		cv.value=2*Math.PI*bankinh;
+		dt.value=Math.PI*bankinh*bankinh;
+		return true;
+		
+	}
+}
+
+</script>
+<style type="text/css">
+<!--
+.style3 {color: #0000FF; font-weight: bold; }
+.style4 {border-color:#0000FF;color:#FF0000}
+-->
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="50%" border="0" cellspacing="3" cellpadding="3">
+    <tr>
+      <td width="23%"><div align="right"><span class="style3">B&aacute;n k&iacute;nh </span></div></td>
+      <td width="77%"><label>
+        <input name="bk" type="text" size="30" class="style4"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="right"><span class="style3">Chu vi </span></div></td>
+      <td><label>
+        <input name="cv" type="text" size="30" disabled="disabled" class="style4"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="right"><span class="style3">Di&#7879;n t&iacute;ch </span></div></td>
+      <td><label>
+        <input name="dt" type="text" size="30" disabled="disabled" class="style4"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="button" name="Submit" value="T&iacute;nh" onclick="tinh()" style="color:#0000FF;border-color:#0000FF;"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

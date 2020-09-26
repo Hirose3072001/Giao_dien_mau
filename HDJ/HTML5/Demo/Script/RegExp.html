@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<form name="frm">
+    	Noi dung kiem tra <input name="txt" type="text" /><br />
+        Bieu thuc quy tac <input name="btqt" type="text"  /><br />
+        <input type="button" value="Xem" onclick="alert(frm.txt.value);frm.txt.value='Chao';" />
+        <input type="button" value="Tinh" onclick="alert(eval(frm.txt.value));" />
+        <input type="button" value="Kiem Tra" onclick="kiemTra(frm.txt.value);" />
+    </form>
+    
+    <script>
+		function kiemTra(s)
+		{
+			re=new RegExp(frm.btqt.value);
+			if(re.test(s)==true)
+				alert("ok");
+			else
+				alert("not ok");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Đăng ký</title>
+<script language="javascript">
+//Ham kiem tra ho ten
+function kthoten(x)
+{
+	if(x.value=="")
+	{
+		alert("Họ tên không được để trống!");
+		x.focus();
+		return false;
+	}
+	re=/^[A-Z][a-z]*(\s[A-Z][a-z]*)*$/;
+	if(re.test(x.value)==false)
+	{
+		alert("Họ tên nhập theo đúng định dạng chữ cái đầu viết hoa, theo sau la các ký tự và dấu cách, sau dấu cách viết hoa\n Ví dụ: Nguyen Xuan Minh");
+		x.select();
+		x.focus();
+		return false;
+	}
+	return true;
+}
+//Ham kiem tra ngay sinh
+function ktngaysinh(x)
+{
+	if(x.value=="")
+	{
+		alert("Ngày sinh không được để trống!");
+		x.focus();
+		return false;
+	}
+	re=/^\d{2}\/\d{2}\/\d{4}$/;
+	if(re.test(x.value)==false)
+	{
+		alert("Ngày sinh ngập theo đúng định dạng DD/MM/YY");
+		x.select();
+		x.focus();
+		return false;
+	}
+	return true;
+}
+//Ham kiem tra noi o
+function ktnoio(x)
+{
+	if(x.value=="")
+	{
+		alert("Nơi ở không được để trống!");
+		x.focus();
+		return false;
+	}
+	return true;
+}
+//Ham cho hien thi form nhap so dien thoai
+function hienthidienthoai()
+{
+	with(form1)
+	{
+		for(i=0;i<2;i++)
+		{
+		if(dienthoai[i].checked==true)
+			sodienthoai[i].disabled=false;
+		else
+			sodienthoai[i].disabled=true;
+		}
+	}
+}
+//Ham kiem tra so dien thoai di dong
+function ktdienthoaidd(x)
+{
+re=/^\d{4}\s{1}\d{3}\s\d{3}$/;
+if(re.test(x.value)==false)
+{
+	alert("Số di dộng phải nạp đúng định dạng 0904 111 111");
+	re.select();
+	re.focus();
+	return false;
+}
+return true;
+}
+//Ham kiem tra so dien thoai co dinh
+function ktdienthoaicd(x)
+{
+re=/^\d{2}\s{1}\d{4}\s\d{3}$/;
+if(re.test(x.value)==false)
+{
+	alert("Số cố định phải nạp đúng định dạng 04 3111 111");
+	re.select();
+	re.focus();
+	return false;
+}
+return true;
+}
+//Ham kiem tra email - Ham nay de lai vi khong tong quat hoa van de
+function gioHocChiTiet(gh)
+{
+		ghoc = document.getElementById("gio");//Lấy lại element
+		ghoc.innerHTML = gh;//Thiết lập nội dung	
+}
+//Ham hien thi ket qua cua form vua nhap
+function ketqua()
+{
+	with(form1)
+	{
+		str="Thông tin cá nhân: <br>";
+		str+= "Họ và tên: " + hoten.value + "<br>";
+		str+= "Giới tính: ";
+		for(i=0;i<2;i++)
+		{
+			if(gioitinh[i].checked==true)
+				str+=gioitinh[i].value;
+		}
+		str+="<br>";
+		str+="Ngày sinh: " + ngaysinh.value + "<br>";
+		str+="Nơi ở hiện tại: " + noio.value + "<br>";
+		str+="Điện thoại: <br>";
+		for(i=0;i<2;i++)
+		{
+			if(dienthoai[i].checked==true)
+				str+=sodienthoai[i].value + "<br>"
+		}
+		str+="Email: " + email.value + "<br>";
+		str+="Tốt nghiệp: ";
+		for(i=0;i<3;i++)
+		{
+			if(totnghiep[i].checked==true)
+				str+=totnghiep[i].value + "<br>";
+		}
+		str+="<p>Đăng ký nhập học: <br>";
+		str+="Khóa học: ";
+		for(i=0;i<3;i++)
+		{
+			if(khoahoc[i].checked==true)
+				str+= khoahoc[i].value + "<br>";
+		}
+		str+="Giờ học: ";
+		for(i=0;i<6;i++)
+		{
+			if(giohoc[i].checked==true)
+				str+=giohoc[i].value;
+		}
+		
+		
+	}
+	document.write(str);
+}
+
+
+
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+ <center> <table width="80%" border="0" cellspacing="2" cellpadding="2">
+    <caption><font color="#0000FF" size="+4">
+      Đăng ký nhập học
+      </font>
+    </caption>
+    <tr>
+      <td><fieldset><legend>Thông tin cá nhân</legend>
+         <center> 
+           <table width="86%" border="0" cellspacing="2" cellpadding="2">
+            <tr>
+              <td align="right">Họ và tên </td>
+              <td align="left"><label>
+                <input type="text" name="hoten" size="30" onblur="kthoten(form1.hoten);" disabled="disabled"/>
+              * (Nguyen Xuan Minh) </label></td>
+            </tr>
+            <tr>
+              <td align="right">Giới tính </td>
+              <td align="left"><label>
+                <input name="gioitinh" type="radio" value="Nam" checked="checked"/>
+              </label>
+              Nam
+              <label>
+              <input name="gioitinh" type="radio" value="Nữ" />
+              </label>
+              Nữ</td>
+            </tr>
+            <tr>
+              <td align="right">Ngày sinh </td>
+              <td align="left"><label>
+                <input type="text" name="ngaysinh" size="30" onblur="ktngaysinh(form1.ngaysinh);"/>
+              * (01/01/1990) </label></td>
+            </tr>
+            <tr>
+              <td align="right">Nơi ở hiện tại </td>
+              <td align="left"><label>
+                <textarea name="noio" cols="30" rows="3" onblur="ktnoio(forrm1.noio)"></textarea>
+              *</label></td>
+            </tr>
+            <tr>
+              <td align="right">Điện thoại </td>
+              <td align="left"><label></label>
+              <table width="80%" height="121" border="1" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="51%"><label>
+                    <input type="checkbox" name="dienthoai" value="checkbox" onclick="hienthidienthoai()"/>
+Di động</label></td>
+                    <td width="49%"><label>
+                    <input type="checkbox" name="dienthoai" value="checkbox" onclick="hienthidienthoai()"/>
+                    Nhà riêng
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" name="sodienthoai" size="30" disabled="disabled" onblur="ktdienthoaidd(form1.sodienthoai[0])"/>
+                      <br />
+                      0904 500 501 </td>
+                    <td>
+                          <input type="text" name="sodienthoai" size="30" disabled="disabled" onblur="ktdienthoaicd(form1.sodienthoai[1])"/><br/>04 3222 111</td>
+                  </tr>
+                </table>
+                <label></label></td>
+            </tr>
+            <tr>
+              <td align="right">Email</td>
+              <td align="left"><label>
+                <textarea name="email" cols="30" rows="3"></textarea>
+              </label></td>
+            </tr>
+            <tr>
+              <td align="right">Tốt nghiệp </td>
+              <td align="left"><label>
+                <input name="totnghiep" type="radio" value="Trung học cơ sở" />
+                THCS
+                <input name="totnghiep" type="radio" value="Trung học phổ thông" checked="checked"/>
+                THPT
+                <input name="totnghiep" type="radio" value="Các trường khác" />
+              Các trường khác </label></td>
+            </tr>
+          </table>
+         </center>
+          </fieldset>
+        <fieldset><legend>Đăng ký học</legend>
+      <center>
+        <table width="80%" border="0" cellspacing="2" cellpadding="2">
+        <tr>
+          <td width="20%" align="right">Khóa học</td>
+          <td width="80%" align="left"><label>
+          <input type="radio" name="khoahoc" value="ACCP" checked="checked"/>ACCP
+		  <input type="radio" name="khoahoc" value="ITT" />ITT
+		  <input type="radio" name="khoahoc" value="ACNA" />ACNA</label></td>
+        </tr>
+        <tr>
+          <td align="right">Giờ Học:</td>
+          <td align="left"><label>
+          <input type="radio" name="giohoc" value="G" onmouseover="gioHocChiTiet('8h-10h');" onmouseout="gioHocChiTiet('');" />
+          G
+          <input type="radio" name="giohoc" value="H" onmouseover="gioHocChiTiet('10h-12h');"  onmouseout="gioHocChiTiet('');" />
+          H
+          <input type="radio" name="giohoc" value="I" onmouseover="gioHocChiTiet('1h30h-3h30h');"  onmouseout="gioHocChiTiet('');" />
+          I
+          <input type="radio" name="giohoc" value="K" onmouseover="gioHocChiTiet('3h30-5h30h');"  onmouseout="gioHocChiTiet('');" />
+          K
+          <input type="radio" name="giohoc" value="L" onmouseover="gioHocChiTiet('5h30h-7h30h');"  onmouseout="gioHocChiTiet('');" />
+          L
+          <input type="radio" name="giohoc" value="M" onmouseover="gioHocChiTiet('7h45h-9h45h');"  onmouseout="gioHocChiTiet('');" />
+          M</label></td>
+        </tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="left"><div id="gio"></div></td>
+		</tr>
+		</table></center>
+      </fieldset></td>
+    </tr>
+  </table></center>
+ <center> <table width="80%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td width="26%" align="right"><label>
+      <input type="button" name="gui" value="Gửi" onclick="ketqua();"/>
+    </label></td>
+    <td width="74%" align="left"><label>
+      <input type="reset" name="xoa" value="Xóa" />
+    </label></td>
+  </tr>
+</table>
+</center>
+</form>
+</body>
+</html>

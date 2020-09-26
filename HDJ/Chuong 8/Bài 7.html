@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script language="javascript">
+
+function disptime() {
+
+   var time = new Date();
+   var hour = time.getHours();
+   var minute = time.getMinutes();
+   var second = time.getSeconds();
+   //Thoi gian 
+   var temp = "" + ((hour > 12) ? hour - 12 : hour);
+   temp += ((minute < 10) ? ":0" : ":") + minute;
+   temp += ((second < 10) ? ":0" : ":") + second;
+   temp += (hour >= 12) ? " P.M." : " A.M.";
+   //Hien thi
+   dongho=document.getElementById("gio");
+   dongho.innerHTML=temp;
+   id = setTimeout("disptime()",1000);
+}
+</script>
+
+</head>
+
+<body onload="disptime()">
+<h1>Bây giờ là: <span id="gio" style="color:#0000FF"></span></h1>
+</body>
+</html>

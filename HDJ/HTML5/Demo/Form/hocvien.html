@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+	input:required{border-color:blue}
+	input:required:valid{color:green}
+	input:required:invalid{color:red}
+</style>
+</head>
+
+<body>
+	<form method="get" action="xuly.html">
+    	Ten<input type="text" name="ten" required="required" pattern="[A-Z][a-z]*(\ [A-Z][a-z]*)+" placeholder="Nhap ten vao day" title="Ten phai co 2 tu" /><br />
+        Tuoi<input name="tuoi"  required="required" pattern="\d{1,3}"/>
+        Chu y<input name="chuy" />
+        <input type="submit" />
+    </form>
+</body>
+</html>

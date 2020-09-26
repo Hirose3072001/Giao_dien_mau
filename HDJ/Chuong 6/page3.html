@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sử dụng biểu thức điều kiện và biểu thức điều kiện</title>
+</head>
+
+<body>
+<p>Yêu cầu: Tìm max và min của hai số a =10 và b=5.
+<p>Kết quả:<br /> 
+<script language="javascript">
+var a,b;
+a=10;
+b=5;
+function max(a,b)
+{
+	return (a>b?a:b);
+}
+function min(a,b)
+{
+	return (a<b?a:b);
+}
+str="Số lớn hơn trong hai số " + a + " và " + b + " là " + max(a,b);
+str+="<br>Số nhỏ hơn trong hai số là " + min(a,b);
+document.write(str);
+</script>
+
+</body>
+</html>

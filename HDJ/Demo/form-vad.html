@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="javascript">
+function kiemtra()
+{
+	re=/^[a-zA-Z\s]+$/;
+	if(re.test(form1.ht.value)==false)
+	{
+		alert("Ho ten loi");
+		form1.ht.focus();//quay ve vi tri loi
+		form1.ht.select();
+		return false;
+	}
+	re=/^\d{2}\/\d{2}\/\d{4}$/;
+	if(re.test(form1.ns.value)==false)
+	{
+		alert("Ngay sinh loi");
+		form1.ns.focus();//quay ve vi tri loi
+		form1.ns.select();
+		return false;
+	}
+	alert("Thanh cong");
+	return true;
+}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="100%" border="0">
+    <tr>
+      <td><div align="right">Ho ten </div></td>
+      <td><label>
+        <div align="left">
+          <input name="ht" type="text" size="30" />
+          </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="right">Ngay sinh </div></td>
+      <td><label>
+        <div align="left">
+          <input name="ns" type="text" size="30" />
+          </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="right">Dien thoai </div></td>
+      <td><label>
+        <div align="left">
+          <input name="sdt" type="text" size="30" />
+          </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><label>
+        <div align="right">
+          <input type="button" name="Button" value="Gui" onclick="kiemtra();"/>
+          </div>
+      </label></td>
+      <td><label>
+        <div align="left">
+          <input type="reset" name="Submit2" value="Xoa" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

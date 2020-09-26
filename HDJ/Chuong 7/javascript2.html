@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script language="javascript">
+function kiemtra(){
+	
+with(document.f1){
+	//re=/^[a-zA-Z0-9\s]+$/;
+	//re=/^[a-zA_Z]\d{4}[a-zA-Z]$/;
+	//re=/^[a-zA-Z][a-zA-Z0-9]{7}$/;
+	//re=/^[a-zA-Z]+$/;
+	re1=/^\d{2}\/\d{2}\/\d{4}$/;
+	re2=/^\d{2}\.\d{2}\.\d{4}$/;
+	if(re1.test(ht.value)==false&&re2.test(ht.value)==false){
+		alert("Ten chi duoc chua chu cai, chu so, dau cach!");
+		ht.focus();
+		ht.select();
+		return;
+		}
+	}	
+}
+</script>
+</head>
+
+<body>
+<form name="f1">
+DANG KY
+<fieldset>
+<legend>Thong tin ca nhan</legend>
+<table border="1" width="100%">
+<tr>
+<td>Ho ten</td>
+<td><input type="text" name="ht" /></td>
+<td>Chi chua chu cai, chu so, dau cach</td>
+</tr>
+<tr>
+<td>Lớp</td>
+<td><input type="text" name="lop" /></td>
+<td>Bắt đầu và kết thúc là 1 chữ cái, ở giữa là 4 chữ số. Ví dụ: T1102K</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+<fieldset>
+<legend>Thong tin dang ky
+</legend>
+<table  width="100%" border="1">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</fieldset>
+<table>
+<tr>
+<td><input type="button" value="Gui" onclick="kiemtra()"/></td>
+<td><input type="reset" value="Xoa" /></td>
+<td></td>
+</tr>
+</table>
+</fieldset>
+</form>
+</body>
+</html>

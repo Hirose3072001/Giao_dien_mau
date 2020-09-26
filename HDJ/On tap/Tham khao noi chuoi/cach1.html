@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script type="text/JavaScript">
+<!--
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+//-->
+</script>
+<script language="javascript">
+	function check()
+		{
+			
+			
+				str="You ordered a coffee with ";
+				dem = 0;
+			for(i=0;i<5;i++)
+				{
+					if(form1.checkbox1[i].checked==true)
+					dem++;
+				}
+			
+			for(i=0;i<5;i++)
+				{
+					if(form1.checkbox1[i].checked==true)
+						{
+							str+=form1.checkbox1[i].value;
+							dem--;
+							if(dem>1)
+							{
+								str+=", ";
+							}
+							if(dem==1)
+							{
+								str+=" and  ";
+							}	
+						}
+				}
+			//form1.textfield.value = str;
+			if(confirm(str)==true)
+			{
+				str="Cam on";
+				for(i=0;i<=1;i++)
+					if(form1.radiobutton[i].checked==true)
+						str+=form1.radiobutton[i].value;
+				
+				alert(str);
+			}
+			
+		}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <label> <br />
+  <input name="checkbox1" type="checkbox" id="checkbox1" value="duong" />
+  duong</label>
+  <p>
+    <label>
+    <input name="checkbox1" type="checkbox" id="checkbox1" value="sua" />
+    sua</label>
+  </p>
+  <p>
+    <label>
+    <input name="checkbox1" type="checkbox" id="checkbox1" value="cream" />
+    cream</label>
+  </p>
+  <p>
+    <label>
+    <input name="checkbox1" type="checkbox" id="checkbox1" value="muoi" />
+    muoi</label>
+  </p>
+  <p>
+    <label>
+    <input name="checkbox1" type="checkbox" id="checkbox1" value="mam tom" />
+    mam tom</label>
+  </p>
+  <p>Gioi tinh
+    <label>
+    <input name="radiobutton" type="radio" value="Mr. " />
+    </label> 
+    Nam
+    <label>
+    <input name="radiobutton" type="radio" value="Mrs. " />
+    </label>
+    Nu
+</p>
+  <p>
+    <label>
+    <input name="Button" type="button" onclick="check()" value="An" />
+    </label>
+  </p>
+  <p>
+    <label>
+    <input name="textfield" type="text" size="100" />
+    </label>
+</p>
+</form>
+</body>
+</html>

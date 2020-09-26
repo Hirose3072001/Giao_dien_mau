@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bài 1</title>
+<script language="javascript">
+function kiemtra()
+{
+	with(document.form1)
+	{
+		if(us.value=="")
+		{
+			alert("Username không được để trống!");
+			us.focus();
+			us.select();
+			return false;
+		}
+		if(pa.value=="")
+		{
+			alert("Password không được để trống!");
+			pa.focus();
+			pa.select();
+			return false;
+		}
+		if(pa.value.length<6||pa.value.length>14)
+		{
+			alert("Password có chiều dài từ 6 đến 14");
+			pa.focus();
+			pa.select();
+			return false;
+		}
+		alert("Bạn đã đăng nhập thành công!");
+		return true;
+	}
+}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="83%" border="0" cellspacing="3" cellpadding="3">
+    <tr>
+      <td scope="col"><div align="right">Username </div></td>
+      <td scope="col"><label>
+        <div align="left">
+          <input type="text" name="us" />
+          Username kh&ocirc;ng &#273;&#432;&#7907;c tr&#7889;ng </div>
+        </label></td>
+    </tr>
+    <tr>
+      <td scope="row"><div align="right">Password</div></td>
+      <td><label>
+        <div align="left">
+          <input type="text" name="pa" />
+          Password kh&ocirc;ng &#273;&#432;&#7907;c tr&#7889;ng, c&oacute; chi&#7873;u d&agrave;i t&#7915; 6 &#273;&#7871;n 14</div>
+        </label></td>
+    </tr>
+    <tr>
+      <th scope="row"><label>
+        <div align="right">
+          <input type="button" name="send" value="Send" onclick="kiemtra()"/>
+        </div>
+      </label></th>
+      <td><label>
+        <div align="left">
+          <input type="reset" name="reset" value="Reset" />
+        </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

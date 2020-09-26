@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #0000FF;
+	font-weight: bold;
+}
+.style2 {color: #0000FF;}
+-->
+</style>
+<script language="javascript">
+function kiemtra()
+{
+	with(document.form1)
+	{
+	re_ht=/^[a-zA-Z0-9\s]+$/
+	if(re_ht.test(ht.value)==false)
+	{
+		alert("Họ tên lỗi: Chỉ chứa chữ cái, số, dấu cách");
+		ht.focus();
+		ht.select();
+		return false;
+	}
+	re_lop=/^[a-zA-Z]\d{4}[a-zA-Z]$/
+	if(re_lop.test(lop.value)==false)
+	{
+		alert("Lớp lỗi: Bắt đầu và kết thúc là 1 chữ cái, ở giữa là 4 chữ số");
+		lop.focus();
+		lop.select();
+		return false;
+	}
+	re_mhv=/^[a-zA-Z][a-zA-Z0-9]{7}$/
+	if(re_mhv.test(mhv.value)==false)
+	{
+		alert("Mã học viên lỗi: Bắt đầu là chữ cái, chỉ chứa chữ cái hoặc số, chiều dài là 8 ký tự");
+		mhv.focus();
+		mhv.select();
+		return false;
+	}
+	re_mon=/^[a-zA-Z]+$/
+	if(re_mon.test(mon.value)==false)
+	{
+		alert("Môn thi lỗi: Chỉ chứa chữ cái");
+		mon.focus();
+		mon.select();
+		return false;
+	}
+	re_ngay=/^\d{2}[\/\.]\d{2}[\/\.]\d{4}$/
+	if(re_ngay.test(ngay.value)==false)
+	{
+		alert("Môn thi lỗi: Nhập theo định dạng MM/DD/YYYY hoặc MM.DD.YYYY");
+		ngay.focus();
+		ngay.select();
+		return false;
+	}
+	}
+	alert("Bạn đã đăng nhập thành công!");
+	return false;
+}
+</script>
+</head>
+
+<body>
+<h1 align="center" class="style2">Đăng ký thi</h1>
+<form id="form1" name="form1" method="post" action=""><fieldset><legend><span class="style1">Thông tin cá nhân</span></legend>
+    <table width="100%" border="1">
+      <caption>&nbsp;
+      </caption>
+      <tr>
+        <td width="16%"><div align="right"><strong>Họ tên </strong></div></td>
+        <td width="84%"><label>
+          <input type="text" name="ht" onfocus="this.style.backgroundColor='yellow'" onblur="this.style.backgroundColor='white'" />
+        * Chỉ chứa chữ cái, số, dấu cách </label></td>
+      </tr>
+      <tr>
+        <td><div align="right"><strong>Lớp </strong></div></td>
+        <td><label>
+          <input type="text" name="lop"  onfocus="this.style.backgroundColor='yellow'" onblur="this.style.backgroundColor='white'"/>
+          * Bắt đầu và kết thúc là 1 chữ cái, ở giữa là 4 chữ số. Ví dụ: T1102K </label></td>
+      </tr>
+      <tr>
+        <td><div align="right"><strong>Mã học viên </strong></div></td>
+        <td><label>
+          <input type="text" name="mhv" />
+        * Bắt đầu là chữ cái, chỉ chứa chữ cái hoặc số, chiều dài là 8 ký tự . Ví dụ: T1102K01 </label></td>
+      </tr>
+    </table>
+    <fieldset><legend class="style1">Thông tin đăng ký</legend>
+    <table width="100%" border="1">
+      <tr>
+        <td width="16%"><div align="right"><strong>Môn thi </strong></div></td>
+        <td width="84%"><label>
+          <input type="text" name="mon" />
+        * Chỉ chứa chữ cái</label></td>
+      </tr>
+      <tr>
+        <td><div align="right"><strong>Ngày thi </strong></div></td>
+        <td><label>
+          <input type="text" name="ngay" />
+        * Nhập theo định dạng MM/DD/YYYY hoặc MM.DD.YYYY </label></td>
+      </tr>
+      <tr>
+        <td><div align="right"><strong>Nội dung </strong></div></td>
+        <td><label>
+          <select name="select">
+            <option>Lý thuyết</option>
+            <option>Thực hành</option>
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="right"><strong>Lần thi </strong></div></td>
+        <td><label>
+          <select name="select2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </label></td>
+      </tr>
+    </table>
+    <p>
+      <label></label>
+    </p>
+    </fieldset> 
+    <table width="100%" border="1">
+      <tr>
+        <td width="17%"><label>
+          <div align="right">
+            <input type="button" name="Button" value="Gửi" onclick="kiemtra();"/>
+          </div>
+        </label></td>
+        <td width="83%"><label>
+          <div align="left">
+            <input type="reset" name="Submit2" value="Xóa" />
+            </div>
+        </label></td>
+      </tr>
+    </table>
+</fieldset>
+</form>
+</body>
+</html>

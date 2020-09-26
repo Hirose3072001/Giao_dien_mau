@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form>
+<p>Birthday
+date <select name="date">
+<script>
+for(var i=1; i<=31;i++)
+document.write("<option value="+i+">"+i+"</option>")
+
+</script>
+</select>
+
+month<select name="month">
+<option value="1">1</option>
+<option value="2">2</option>
+</select>
+year
+<select name="year">
+<script>
+date=new Date()
+crYear=date.getYear()
+for(var i=1; i<=31;i++)
+document.write("<option value="+i+">"+i+"</option>")
+
+</script>
+<option value="1940">1940</option>
+<option value="1941">1941</option>
+</select>
+
+</form>
+</body>
+</html>

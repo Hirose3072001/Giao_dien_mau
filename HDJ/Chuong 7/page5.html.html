@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bảng tính</title>
+<script language="javascript">
+function tinh(a)
+{
+	x=form1.so1.value;
+	y=form1.so2.value;
+	ct=document.getElementById("chuthich");
+	if(x=="")
+	{
+		ct.innerHTML="Bạn hãy điền vào số thứ nhất!";
+		form1.ketqua.value="";
+		form1.so1.focus();
+		return false;
+	}
+	if(isNaN(x))
+	{
+		ct.innerHTML="Phải nhập vào một số!";
+		form1.ketqua.value="";
+		form1.so1.focus();
+		form1.so1.select();
+		return false;
+	}
+	if(y=="")
+	{
+		ct.innerHTML="Bạn hãy điền vào số thứ hai!";
+		form1.ketqua.value="";
+		form1.so2.focus();
+		return false;
+	}
+	
+	if(isNaN(y))
+	{
+		ct.innerHTML="Phải nhập vào một số!";
+		form1.ketqua.value="";
+		form1.so2.focus();
+		form1.so2.select();
+		return false;
+	}
+	switch(a)
+	{
+		case "+":
+			form1.ketqua.value=eval(x)+eval(y);
+			ct.innerHTML="Tổng của " + x + " và " + y + " là " +  form1.ketqua.value;
+			break;
+		case "-":
+			form1.ketqua.value=eval(x)-eval(y);
+			ct.innerHTML="Hiệu của " + x + " và " + y + " là " +  form1.ketqua.value;
+			break;
+		case "*":
+			form1.ketqua.value=eval(x)*eval(y);
+			ct.innerHTML="Tích của " + x + " và " + y + " là " +  form1.ketqua.value;
+			break;
+		case "/":
+			if(y==0)
+			{
+				ct.innerHTML="Số thứ hai phải khác 0";
+				form1.ketqua.value="";
+				form1.so2.focus();
+				form1.so2.select();
+				return false;
+			}
+			form1.ketqua.value=eval(x)/eval(y);
+			ct.innerHTML="Thương của " + x + " và " + y + " là " +  form1.ketqua.value;
+			break;			
+	}
+}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="52%" border="1" cellspacing="2" cellpadding="2">
+    <tr>
+      <td width="19%">Số 1 </td>
+      <td width="35%"><input type="text" name="so1" /></td>
+      <td width="46%"><u>Chú thích </u></td>
+    </tr>
+    <tr>
+      <td>Số 2 </td>
+      <td><input type="text" name="so2" /></td>
+      <td rowspan="3"><div id="chuthich">&nbsp;</div></td>
+    </tr>
+    <tr>
+      <td>Phép tính </td>
+      <td><p>
+        <label>
+          <input name="pheptinh" type="radio" value="+" onclick="tinh(form1.pheptinh[0].value)"/>
+            +</label>
+          <label>
+          <input name="pheptinh" type="radio" value="-" onclick="tinh(form1.pheptinh[1].value)"/>
+            -</label>
+          <label>
+          <input name="pheptinh" type="radio" value="*" onclick="tinh(form1.pheptinh[2].value)"/>
+            *</label>
+          <label>
+          <input name="pheptinh" type="radio" value="/" onclick="tinh(form1.pheptinh[3].value)"/>
+      /</label></p>
+      </td>
+    </tr>
+    <tr>
+      <td>Kết quả </td>
+      <td><input type="text" name="ketqua" disabled="disabled"/></td>
+    </tr>
+  </table>
+  <label></label>
+  <p>
+    <label></label>
+    <label></label>
+    <label></label>
+  </p>
+</form>
+</body>
+</html>

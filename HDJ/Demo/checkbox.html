@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="javascript">
+function check()
+{
+	dem=0;
+	for(i=0;i<4;i++)
+	{
+		if(form1.checkbox[i].checked==true)
+			{
+				dem++;
+			}
+	}
+	if(dem==0)
+		alert("Loi");
+}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <label>
+  <input type="checkbox" name="checkbox" value="checkbox" />
+  </label>
+  1
+  <label>
+  <input type="checkbox" name="checkbox" value="checkbox" />
+  </label>
+2
+<label>
+<input type="checkbox" name="checkbox" value="checkbox" />
+3</label>
+<label>
+<input type="checkbox" name="checkbox" value="checkbox" />
+4</label>
+<label>
+<input type="button" name="Button" value="Button" onclick="check()"/>
+</label>
+</form>
+</body>
+</html>

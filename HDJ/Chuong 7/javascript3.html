@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script language="javascript">
+function kiemtra(){
+	if(f1.so1.value==""){
+		document.getElementById("loi").innerHTML="Loi chua nhap du lieu";
+		f1.so1.focus();
+		f1.so1.select();
+		return;
+	}
+	document.getElementById("loi").innerHTML="";
+	
+}
+</script>
+</head>
+
+<body>
+<form name="f1">
+<input type="text" name="so1" />
+<input type="radio" onclick="kiemtra();"/>OK
+<table>
+<tr>
+<td id="loi">Noi dung loi</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

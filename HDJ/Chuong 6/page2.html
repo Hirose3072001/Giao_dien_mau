@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sử dụng mảng</title>
+</head>
+
+<body>
+<p>Yêu cầu <br />Hãy khai báo một mảng gồm 5 phần tử nhận các giá tri 1, 2, 3, 4, 5.<br>Sau đó tình tổng các phần tử trong mảng.</p>
+<p>Kết quả:<br /> 
+<script language="javascript">
+a= new Array(1,2,3,4,5);
+str="Các giá trị trong mảng: ";
+tong=0;
+for(i in a)
+{
+	str+=a[i] + " ";
+	tong+=a[i];
+}
+	str+="<br>Tổng các giá trị trong mảng là " + tong;
+	document.write(str);
+</script>
+
+</body>
+</html>

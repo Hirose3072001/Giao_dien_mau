@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sử dụng hàm getElementById()</title>
+<script language="javascript">
+
+function changecolor(x)
+{
+	element=document.getElementById("doan");
+	element.style.color=x;
+}
+</script>
+</head>
+
+<body>
+<p id="doan">Nội dung của đoạn này sẽ được chuyển màu khi bạn click vào hai nút dưới đây!</p>
+<input type="button" onclick="changecolor('red')" value="Màu đỏ"/>
+<input type="button" onclick="changecolor('green')" value="Màu xanh"/>
+
+</body>
+</html>

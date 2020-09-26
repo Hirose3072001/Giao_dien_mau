@@ -1,0 +1,65 @@
+<html>
+<head>
+<script type="text/javascript">
+function createOrder()
+{
+coffee=document.forms[0].coffee;
+txt="";
+x = coffee.length;
+count = 0;
+index = 0;
+
+for (i=0;i<x;++ i)
+  {
+     if (coffee[i].checked) count++;  
+  }
+if(count>1){
+
+for (i=0;i<x;++ i)
+  {
+  if (coffee[i].checked)  
+   {
+    index++;
+    if(index < count - 1){
+        txt=txt + coffee[i].value + ", ";
+    }else if(index==count-1){
+        txt=txt +  coffee[i].value;        
+    }else{
+        txt=txt + " and " + coffee[i].value + " ";
+    }    
+   }
+  }
+} else{
+    for (i=0;i<x;++ i)
+       {
+         if (coffee[i].checked)  
+          {
+              txt=txt + coffee[i].value;
+          }
+       }
+}
+
+   document.getElementById("order").value="You ordered a coffee with " + txt;
+}
+</script>
+</head>
+
+<body>
+<p>How would you like your coffee?</p>
+<form>
+<input type="checkbox" name="coffee" value="cream">With cream<br />
+<input type="checkbox" name="coffee" value="sugar">With sugar<br />
+<input type="checkbox" name="coffee" value="salt">With salt
+<br />
+<input type="checkbox" name="coffee" value="Duong">With Duong<br />
+<input type="checkbox" name="coffee" value="Kem">With Kem
+<br />
+<input type="checkbox" name="coffee" value="Muoi">With Muoi<br />
+<input type="button" onclick="createOrder()" value="Send order">
+<br /><br />
+<input type="text" id="order" size="100">
+</form>
+</body>
+
+</html>
+

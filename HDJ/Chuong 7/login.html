@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script language="javascript">
+function checklogin(){
+	//alert('xinchao');
+	//lay gia tri cua username
+	username=login.user.value;
+	//lay gia tri cua password
+	password=login.pass.value;
+	//User: Không trống, chỉ chứa các ký tự hoặc khoảng trắng.
+	re_user=/^[a-zA-Z\s]+$/;
+	if(re_user.test(username)==false){
+		alert("User: Không trống, chỉ chứa các ký tự hoặc khoảng trắng.");
+		//focus
+		login.user.focus();
+		login.user.select();
+		return;
+		}
+	//Password: Không trống, chỉ chứa chữ cái và chữ số, chiều dài từ 6 đến 14
+	re_pass=/^[0-9a-zA-Z]{6,14}$/;
+	if(re_pass.test(password)==false){
+		alert("Password: Không trống, chỉ chứa chữ cái và chữ số, chiều dài từ 6 đến 14");
+		login.pass.focus();
+		login.user.select();
+		return;
+		}
+	alert("Thanh cong");
+	
+	}
+</script>
+</head>
+
+<body>
+<form id="form1" name="login" method="post" action="">
+  <table width="200" border="0" align="center">
+    <tr>
+      <td>Username</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="user" id="textfield" /></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><label for="textfield2"></label>
+      <input type="password" name="pass" id="textfield2" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" onclick="checklogin();" name="button" id="button" value="Send" /></td>
+      <td><input type="reset" name="button2" id="button2" value="Cancel" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

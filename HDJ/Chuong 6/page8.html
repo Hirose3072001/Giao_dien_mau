@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sử dụng biểu thức quy tắc để kiểm tra form</title>
+<script language="javascript">
+function kiemtra()
+{
+	//Account chỉ chứa các ký tự và ký số, không được để trống
+	re=/^\w+$/;
+	if(re.test(form1.account.value)==false)
+	{
+		alert("Account không được để trống, chỉ có thể chứa các ký tự và ký số");
+		form1.account.select();
+		form1.account.focus();
+		return(false);
+	}
+	//Account chỉ chứa các ký tự và ký số, không được để trống
+	re=/^\w{7,14}$/;
+	if(re.test(form1.password.value)==false)
+	{
+		alert("Mật khẩu không được để trống, chỉ có thể chứa các ký tự và ký số, chiều dài tối thiểu là 7 , tối đa là 14");
+		form1.password.select();
+		form1.password.focus();
+		return(false);
+	}
+	alert("Bạn đã đăng nhập thành công!");
+	return true;
+}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="50%" border="1" cellspacing="2" cellpadding="2">
+    <tr>
+      <td><div align="right">Account</div></td>
+      <td><label>
+        <input type="text" name="account" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="right">Password</div></td>
+      <td><label>
+        <input type="password" name="password" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><label>
+        <div align="right">
+          <input type="button" name="gui" value="Gửi" onclick="kiemtra()"/>
+          </div>
+      </label></td>
+      <td><label>
+        <input type="reset" name="xoa" value="Xóa" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

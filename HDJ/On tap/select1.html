@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script language="javascript">
+function ktra()
+{
+	//Cach 1
+	if(form1.chon.selectedIndex==0)
+	{
+		alert("Loi");
+		form1.chon.focus();
+		return false;
+	}
+	alert("Thanh cong");
+	return true;
+}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <label>
+  <select name="chon" >
+    <option>Chon 1 cau</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+  </label>
+  <label>
+  <input type="button" name="Button" value="Kiem tra" onclick="ktra()"/>
+  </label>
+</form>
+</body>
+</html>
